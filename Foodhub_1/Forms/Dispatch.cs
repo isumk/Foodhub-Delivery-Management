@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Foodhub_1
 {
-    public partial class Dispatch : Form
+    public partial class FrmDispatch : Form
     {
-        public Dispatch()
+        public FrmDispatch()
         {
             InitializeComponent();
         }

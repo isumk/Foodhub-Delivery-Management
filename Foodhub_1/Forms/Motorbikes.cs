@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Foodhub_1
 {
-    public partial class Motorbikes : Form
+    public partial class FrmMotorBikes : Form
     {
-        public Motorbikes()
+        public FrmMotorBikes()
         {
             InitializeComponent();
         }

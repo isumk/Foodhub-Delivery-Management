@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Foodhub_1
 {
-    public partial class Riders : Form
+    public partial class FrmRiders : Form
     {
-        public Riders()
+        public FrmRiders()
         {
             InitializeComponent();
+        }
+
+        private void Riders_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

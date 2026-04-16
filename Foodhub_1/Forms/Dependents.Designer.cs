@@ -1,6 +1,6 @@
 ﻿namespace Foodhub_1
 {
-    partial class Dependents
+    partial class FrmDependents
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Dependents
+            // FrmDependents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 450);
-            this.Name = "Dependents";
+            this.Name = "FrmDependents";
             this.Text = "Dependents";
             this.ResumeLayout(false);
 
