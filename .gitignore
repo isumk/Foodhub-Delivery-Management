@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+Debug/
+Release/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# SQL local files
+*.mdf
+*.ldf
+
+# Packages
+packages/
+*.nupkg
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
