@@ -30,15 +30,15 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDependentID = new System.Windows.Forms.TextBox();
-            this.txtDependentName = new System.Windows.Forms.TextBox();
-            this.cmbRider = new System.Windows.Forms.ComboBox();
-            this.cmbRelationship = new System.Windows.Forms.ComboBox();
             this.dtpDependentDOB = new System.Windows.Forms.DateTimePicker();
+            this.cmbRelationship = new System.Windows.Forms.ComboBox();
+            this.cmbRider = new System.Windows.Forms.ComboBox();
+            this.txtDependentName = new System.Windows.Forms.TextBox();
+            this.txtDependentID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -76,64 +76,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rider Dependents";
             // 
-            // label3
+            // dtpDependentDOB
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Rider";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 26);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Dependednt \r\nname";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 119);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Relationship";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 147);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "DOB";
-            // 
-            // txtDependentID
-            // 
-            this.txtDependentID.Location = new System.Drawing.Point(68, 33);
-            this.txtDependentID.Name = "txtDependentID";
-            this.txtDependentID.ReadOnly = true;
-            this.txtDependentID.Size = new System.Drawing.Size(185, 20);
-            this.txtDependentID.TabIndex = 6;
-            // 
-            // txtDependentName
-            // 
-            this.txtDependentName.Location = new System.Drawing.Point(68, 90);
-            this.txtDependentName.Name = "txtDependentName";
-            this.txtDependentName.Size = new System.Drawing.Size(185, 20);
-            this.txtDependentName.TabIndex = 7;
-            // 
-            // cmbRider
-            // 
-            this.cmbRider.FormattingEnabled = true;
-            this.cmbRider.Location = new System.Drawing.Point(68, 59);
-            this.cmbRider.Name = "cmbRider";
-            this.cmbRider.Size = new System.Drawing.Size(185, 21);
-            this.cmbRider.TabIndex = 8;
+            this.dtpDependentDOB.Location = new System.Drawing.Point(68, 140);
+            this.dtpDependentDOB.Name = "dtpDependentDOB";
+            this.dtpDependentDOB.Size = new System.Drawing.Size(185, 20);
+            this.dtpDependentDOB.TabIndex = 10;
             // 
             // cmbRelationship
             // 
@@ -161,12 +109,65 @@
             this.cmbRelationship.Size = new System.Drawing.Size(185, 21);
             this.cmbRelationship.TabIndex = 9;
             // 
-            // dtpDependentDOB
+            // cmbRider
             // 
-            this.dtpDependentDOB.Location = new System.Drawing.Point(68, 140);
-            this.dtpDependentDOB.Name = "dtpDependentDOB";
-            this.dtpDependentDOB.Size = new System.Drawing.Size(185, 20);
-            this.dtpDependentDOB.TabIndex = 10;
+            this.cmbRider.FormattingEnabled = true;
+            this.cmbRider.Location = new System.Drawing.Point(68, 59);
+            this.cmbRider.Name = "cmbRider";
+            this.cmbRider.Size = new System.Drawing.Size(185, 21);
+            this.cmbRider.TabIndex = 8;
+            this.cmbRider.SelectedIndexChanged += new System.EventHandler(this.cmbRider_SelectedIndexChanged);
+            // 
+            // txtDependentName
+            // 
+            this.txtDependentName.Location = new System.Drawing.Point(68, 90);
+            this.txtDependentName.Name = "txtDependentName";
+            this.txtDependentName.Size = new System.Drawing.Size(185, 20);
+            this.txtDependentName.TabIndex = 7;
+            // 
+            // txtDependentID
+            // 
+            this.txtDependentID.Location = new System.Drawing.Point(68, 33);
+            this.txtDependentID.Name = "txtDependentID";
+            this.txtDependentID.ReadOnly = true;
+            this.txtDependentID.Size = new System.Drawing.Size(185, 20);
+            this.txtDependentID.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "DOB";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 119);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Relationship";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 26);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Dependednt \r\nname";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Rider";
             // 
             // btnSave
             // 
@@ -176,6 +177,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -185,6 +187,7 @@
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -194,6 +197,7 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -203,6 +207,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvDependents
             // 
@@ -211,6 +216,7 @@
             this.dgvDependents.Name = "dgvDependents";
             this.dgvDependents.Size = new System.Drawing.Size(376, 125);
             this.dgvDependents.TabIndex = 7;
+            this.dgvDependents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDependents_CellContentClick);
             // 
             // FrmDependents
             // 

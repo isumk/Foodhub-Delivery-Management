@@ -184,6 +184,7 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReturnBike
             // 
@@ -193,6 +194,7 @@
             this.btnReturnBike.TabIndex = 16;
             this.btnReturnBike.Text = "Return Bike";
             this.btnReturnBike.UseVisualStyleBackColor = true;
+            this.btnReturnBike.Click += new System.EventHandler(this.btnReturnBike_Click);
             // 
             // btnUpdate
             // 
@@ -202,6 +204,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -211,6 +214,7 @@
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -220,6 +224,7 @@
             this.btnClear.TabIndex = 19;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // FrmBikeassignments
             // 

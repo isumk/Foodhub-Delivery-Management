@@ -106,10 +106,6 @@ namespace Foodhub_1
             }
 
 
-
-
-
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

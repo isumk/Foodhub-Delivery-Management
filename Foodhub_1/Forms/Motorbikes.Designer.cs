@@ -30,21 +30,21 @@
         {
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpVehicleRegisteredDate = new System.Windows.Forms.DateTimePicker();
+            this.txtEngineNumber = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.txtVehicleRegNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMotorBikes = new System.Windows.Forms.DataGridView();
-            this.txtVehicleRegNo = new System.Windows.Forms.TextBox();
-            this.txtBrand = new System.Windows.Forms.TextBox();
-            this.txtModel = new System.Windows.Forms.TextBox();
-            this.txtEngineNumber = new System.Windows.Forms.TextBox();
             this.txtColour = new System.Windows.Forms.TextBox();
             this.btnAddColour = new System.Windows.Forms.Button();
             this.btnRemoveColour = new System.Windows.Forms.Button();
             this.lstColours = new System.Windows.Forms.ListBox();
-            this.dtpVehicleRegisteredDate = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -80,6 +80,41 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // dtpVehicleRegisteredDate
+            // 
+            this.dtpVehicleRegisteredDate.Location = new System.Drawing.Point(106, 156);
+            this.dtpVehicleRegisteredDate.Name = "dtpVehicleRegisteredDate";
+            this.dtpVehicleRegisteredDate.Size = new System.Drawing.Size(213, 20);
+            this.dtpVehicleRegisteredDate.TabIndex = 14;
+            // 
+            // txtEngineNumber
+            // 
+            this.txtEngineNumber.Location = new System.Drawing.Point(106, 124);
+            this.txtEngineNumber.Name = "txtEngineNumber";
+            this.txtEngineNumber.Size = new System.Drawing.Size(213, 20);
+            this.txtEngineNumber.TabIndex = 13;
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(106, 90);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(213, 20);
+            this.txtModel.TabIndex = 12;
+            // 
+            // txtBrand
+            // 
+            this.txtBrand.Location = new System.Drawing.Point(106, 56);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(213, 20);
+            this.txtBrand.TabIndex = 11;
+            // 
+            // txtVehicleRegNo
+            // 
+            this.txtVehicleRegNo.Location = new System.Drawing.Point(106, 25);
+            this.txtVehicleRegNo.Name = "txtVehicleRegNo";
+            this.txtVehicleRegNo.Size = new System.Drawing.Size(213, 20);
+            this.txtVehicleRegNo.TabIndex = 10;
             // 
             // label5
             // 
@@ -134,34 +169,7 @@
             this.dgvMotorBikes.Name = "dgvMotorBikes";
             this.dgvMotorBikes.Size = new System.Drawing.Size(544, 154);
             this.dgvMotorBikes.TabIndex = 7;
-            // 
-            // txtVehicleRegNo
-            // 
-            this.txtVehicleRegNo.Location = new System.Drawing.Point(106, 25);
-            this.txtVehicleRegNo.Name = "txtVehicleRegNo";
-            this.txtVehicleRegNo.Size = new System.Drawing.Size(213, 20);
-            this.txtVehicleRegNo.TabIndex = 10;
-            // 
-            // txtBrand
-            // 
-            this.txtBrand.Location = new System.Drawing.Point(106, 56);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(213, 20);
-            this.txtBrand.TabIndex = 11;
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(106, 90);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(213, 20);
-            this.txtModel.TabIndex = 12;
-            // 
-            // txtEngineNumber
-            // 
-            this.txtEngineNumber.Location = new System.Drawing.Point(106, 124);
-            this.txtEngineNumber.Name = "txtEngineNumber";
-            this.txtEngineNumber.Size = new System.Drawing.Size(213, 20);
-            this.txtEngineNumber.TabIndex = 13;
+            this.dgvMotorBikes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMotorBikes_CellContentClick);
             // 
             // txtColour
             // 
@@ -178,6 +186,7 @@
             this.btnAddColour.TabIndex = 15;
             this.btnAddColour.Text = "Add Colour";
             this.btnAddColour.UseVisualStyleBackColor = true;
+            this.btnAddColour.Click += new System.EventHandler(this.btnAddColour_Click);
             // 
             // btnRemoveColour
             // 
@@ -187,6 +196,7 @@
             this.btnRemoveColour.TabIndex = 16;
             this.btnRemoveColour.Text = "Remove Colour";
             this.btnRemoveColour.UseVisualStyleBackColor = true;
+            this.btnRemoveColour.Click += new System.EventHandler(this.btnRemoveColour_Click);
             // 
             // lstColours
             // 
@@ -196,13 +206,6 @@
             this.lstColours.Size = new System.Drawing.Size(169, 30);
             this.lstColours.TabIndex = 17;
             // 
-            // dtpVehicleRegisteredDate
-            // 
-            this.dtpVehicleRegisteredDate.Location = new System.Drawing.Point(106, 156);
-            this.dtpVehicleRegisteredDate.Name = "dtpVehicleRegisteredDate";
-            this.dtpVehicleRegisteredDate.Size = new System.Drawing.Size(213, 20);
-            this.dtpVehicleRegisteredDate.TabIndex = 14;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(79, 208);
@@ -211,6 +214,7 @@
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -220,6 +224,7 @@
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -229,6 +234,7 @@
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -238,6 +244,7 @@
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // FrmMotorBikes
             // 
@@ -257,6 +264,7 @@
             this.Controls.Add(this.label6);
             this.Name = "FrmMotorBikes";
             this.Text = "Motorbikes";
+            this.Load += new System.EventHandler(this.FrmMotorBikes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotorBikes)).EndInit();

@@ -128,6 +128,9 @@ namespace Foodhub_1
         {
             orderItemsTable.Rows.Clear();
             UpdateTotal();
+            cmbPaymentMethod.SelectedIndex = -1;
+            cmbOrderStatus.SelectedIndex = -1;
+            numQuantity.Value = 1;
         }
 
         private void FrmOrders_Load(object sender, EventArgs e)
