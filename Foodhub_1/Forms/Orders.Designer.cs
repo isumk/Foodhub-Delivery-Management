@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.grpOrderHeader = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblOrderTime = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbCustomer = new System.Windows.Forms.ComboBox();
-            this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
-            this.cmbOrderStatus = new System.Windows.Forms.ComboBox();
-            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
             this.dtpOrderTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbOrderStatus = new System.Windows.Forms.ComboBox();
+            this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.cmbCustomer = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblOrderTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grpOrderItems = new System.Windows.Forms.GroupBox();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.numQuantity = new System.Windows.Forms.NumericUpDown();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.cmbFoodItem = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.numQuantity = new System.Windows.Forms.NumericUpDown();
-            this.btnAddItem = new System.Windows.Forms.Button();
-            this.btnRemoveItem = new System.Windows.Forms.Button();
             this.dgvOrderItems = new System.Windows.Forms.DataGridView();
             this.lblTotalText = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
@@ -78,71 +78,24 @@
             this.grpOrderHeader.TabIndex = 0;
             this.grpOrderHeader.TabStop = false;
             this.grpOrderHeader.Text = "Order Information";
+            this.grpOrderHeader.Enter += new System.EventHandler(this.grpOrderHeader_Enter);
             // 
-            // label1
+            // dtpOrderTime
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Customer";
+            this.dtpOrderTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpOrderTime.Location = new System.Drawing.Point(61, 126);
+            this.dtpOrderTime.Name = "dtpOrderTime";
+            this.dtpOrderTime.ShowUpDown = true;
+            this.dtpOrderTime.Size = new System.Drawing.Size(200, 20);
+            this.dtpOrderTime.TabIndex = 8;
             // 
-            // label2
+            // dtpOrderDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Order Date";
-            // 
-            // lblOrderTime
-            // 
-            this.lblOrderTime.AutoSize = true;
-            this.lblOrderTime.Location = new System.Drawing.Point(1, 132);
-            this.lblOrderTime.Name = "lblOrderTime";
-            this.lblOrderTime.Size = new System.Drawing.Size(59, 13);
-            this.lblOrderTime.TabIndex = 2;
-            this.lblOrderTime.Text = "Order Time";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-3, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Payment Method";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 209);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Order Status";
-            // 
-            // cmbCustomer
-            // 
-            this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(61, 44);
-            this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(200, 21);
-            this.cmbCustomer.TabIndex = 1;
-            // 
-            // cmbPaymentMethod
-            // 
-            this.cmbPaymentMethod.FormattingEnabled = true;
-            this.cmbPaymentMethod.Items.AddRange(new object[] {
-            "Cash",
-            "Card",
-            "Online"});
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(90, 166);
-            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(171, 21);
-            this.cmbPaymentMethod.TabIndex = 5;
+            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOrderDate.Location = new System.Drawing.Point(61, 83);
+            this.dtpOrderDate.Name = "dtpOrderDate";
+            this.dtpOrderDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpOrderDate.TabIndex = 7;
             // 
             // cmbOrderStatus
             // 
@@ -158,22 +111,70 @@
             this.cmbOrderStatus.Size = new System.Drawing.Size(171, 21);
             this.cmbOrderStatus.TabIndex = 6;
             // 
-            // dtpOrderDate
+            // cmbPaymentMethod
             // 
-            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOrderDate.Location = new System.Drawing.Point(61, 83);
-            this.dtpOrderDate.Name = "dtpOrderDate";
-            this.dtpOrderDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpOrderDate.TabIndex = 7;
+            this.cmbPaymentMethod.FormattingEnabled = true;
+            this.cmbPaymentMethod.Items.AddRange(new object[] {
+            "Cash",
+            "Card",
+            "Online"});
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(90, 166);
+            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(171, 21);
+            this.cmbPaymentMethod.TabIndex = 5;
             // 
-            // dtpOrderTime
+            // cmbCustomer
             // 
-            this.dtpOrderTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpOrderTime.Location = new System.Drawing.Point(61, 126);
-            this.dtpOrderTime.Name = "dtpOrderTime";
-            this.dtpOrderTime.ShowUpDown = true;
-            this.dtpOrderTime.Size = new System.Drawing.Size(200, 20);
-            this.dtpOrderTime.TabIndex = 8;
+            this.cmbCustomer.FormattingEnabled = true;
+            this.cmbCustomer.Location = new System.Drawing.Point(61, 44);
+            this.cmbCustomer.Name = "cmbCustomer";
+            this.cmbCustomer.Size = new System.Drawing.Size(200, 21);
+            this.cmbCustomer.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1, 209);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Order Status";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(-3, 169);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Payment Method";
+            // 
+            // lblOrderTime
+            // 
+            this.lblOrderTime.AutoSize = true;
+            this.lblOrderTime.Location = new System.Drawing.Point(1, 132);
+            this.lblOrderTime.Name = "lblOrderTime";
+            this.lblOrderTime.Size = new System.Drawing.Size(59, 13);
+            this.lblOrderTime.TabIndex = 2;
+            this.lblOrderTime.Text = "Order Time";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Order Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Customer";
             // 
             // grpOrderItems
             // 
@@ -192,6 +193,52 @@
             this.grpOrderItems.TabStop = false;
             this.grpOrderItems.Text = "Add Food Items";
             // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.Location = new System.Drawing.Point(138, 169);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(77, 23);
+            this.btnRemoveItem.TabIndex = 6;
+            this.btnRemoveItem.Text = "Remove Item";
+            this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Location = new System.Drawing.Point(38, 169);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(77, 23);
+            this.btnAddItem.TabIndex = 5;
+            this.btnAddItem.Text = "Add Item";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // numQuantity
+            // 
+            this.numQuantity.Location = new System.Drawing.Point(61, 124);
+            this.numQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numQuantity.Name = "numQuantity";
+            this.numQuantity.Size = new System.Drawing.Size(126, 20);
+            this.numQuantity.TabIndex = 4;
+            this.numQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(61, 87);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.ReadOnly = true;
+            this.txtUnitPrice.Size = new System.Drawing.Size(200, 20);
+            this.txtUnitPrice.TabIndex = 3;
+            this.txtUnitPrice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // cmbFoodItem
             // 
             this.cmbFoodItem.FormattingEnabled = true;
@@ -199,6 +246,7 @@
             this.cmbFoodItem.Name = "cmbFoodItem";
             this.cmbFoodItem.Size = new System.Drawing.Size(200, 21);
             this.cmbFoodItem.TabIndex = 1;
+            this.cmbFoodItem.SelectedIndexChanged += new System.EventHandler(this.cmbFoodItem_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -226,50 +274,6 @@
             this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Food Item";
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(61, 87);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.ReadOnly = true;
-            this.txtUnitPrice.Size = new System.Drawing.Size(200, 20);
-            this.txtUnitPrice.TabIndex = 3;
-            this.txtUnitPrice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // numQuantity
-            // 
-            this.numQuantity.Location = new System.Drawing.Point(61, 124);
-            this.numQuantity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(126, 20);
-            this.numQuantity.TabIndex = 4;
-            this.numQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // btnAddItem
-            // 
-            this.btnAddItem.Location = new System.Drawing.Point(38, 169);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(77, 23);
-            this.btnAddItem.TabIndex = 5;
-            this.btnAddItem.Text = "Add Item";
-            this.btnAddItem.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveItem
-            // 
-            this.btnRemoveItem.Location = new System.Drawing.Point(138, 169);
-            this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(77, 23);
-            this.btnRemoveItem.TabIndex = 6;
-            this.btnRemoveItem.Text = "Remove Item";
-            this.btnRemoveItem.UseVisualStyleBackColor = true;
             // 
             // dgvOrderItems
             // 
@@ -305,6 +309,7 @@
             this.btnClearOrder.TabIndex = 14;
             this.btnClearOrder.Text = "Clear Order";
             this.btnClearOrder.UseVisualStyleBackColor = true;
+            this.btnClearOrder.Click += new System.EventHandler(this.btnClearOrder_Click);
             // 
             // btnSaveOrder
             // 
@@ -314,6 +319,7 @@
             this.btnSaveOrder.TabIndex = 13;
             this.btnSaveOrder.Text = "Save Order";
             this.btnSaveOrder.UseVisualStyleBackColor = true;
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
             // FrmOrders
             // 
@@ -329,6 +335,7 @@
             this.Controls.Add(this.grpOrderHeader);
             this.Name = "FrmOrders";
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.FrmOrders_Load);
             this.grpOrderHeader.ResumeLayout(false);
             this.grpOrderHeader.PerformLayout();
             this.grpOrderItems.ResumeLayout(false);
