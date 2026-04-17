@@ -49,6 +49,7 @@
             this.btnCustomers.TabIndex = 0;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnFoodItems
             // 
@@ -58,6 +59,7 @@
             this.btnFoodItems.TabIndex = 1;
             this.btnFoodItems.Text = "Food Items";
             this.btnFoodItems.UseVisualStyleBackColor = true;
+            this.btnFoodItems.Click += new System.EventHandler(this.btnFoodItems_Click);
             // 
             // btnIngredients
             // 
@@ -67,6 +69,7 @@
             this.btnIngredients.TabIndex = 2;
             this.btnIngredients.Text = "Ingredients";
             this.btnIngredients.UseVisualStyleBackColor = true;
+            this.btnIngredients.Click += new System.EventHandler(this.btnIngredients_Click);
             // 
             // btnOrders
             // 
@@ -76,6 +79,7 @@
             this.btnOrders.TabIndex = 3;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnDispatchOrders
             // 
@@ -85,6 +89,7 @@
             this.btnDispatchOrders.TabIndex = 4;
             this.btnDispatchOrders.Text = "Dispatch Orders";
             this.btnDispatchOrders.UseVisualStyleBackColor = true;
+            this.btnDispatchOrders.Click += new System.EventHandler(this.btnDispatchOrders_Click);
             // 
             // btnRiders
             // 
@@ -94,6 +99,7 @@
             this.btnRiders.TabIndex = 5;
             this.btnRiders.Text = "Riders";
             this.btnRiders.UseVisualStyleBackColor = true;
+            this.btnRiders.Click += new System.EventHandler(this.btnRiders_Click);
             // 
             // btnDependents
             // 
@@ -103,6 +109,7 @@
             this.btnDependents.TabIndex = 6;
             this.btnDependents.Text = "Dependents";
             this.btnDependents.UseVisualStyleBackColor = true;
+            this.btnDependents.Click += new System.EventHandler(this.btnDependents_Click);
             // 
             // btnMotorBikes
             // 
@@ -112,6 +119,7 @@
             this.btnMotorBikes.TabIndex = 7;
             this.btnMotorBikes.Text = "Motor Bikes";
             this.btnMotorBikes.UseVisualStyleBackColor = true;
+            this.btnMotorBikes.Click += new System.EventHandler(this.btnMotorBikes_Click);
             // 
             // btnBikeAssignments
             // 
@@ -121,6 +129,7 @@
             this.btnBikeAssignments.TabIndex = 8;
             this.btnBikeAssignments.Text = "Bike Assignments";
             this.btnBikeAssignments.UseVisualStyleBackColor = true;
+            this.btnBikeAssignments.Click += new System.EventHandler(this.btnBikeAssignments_Click);
             // 
             // btnExit
             // 
@@ -130,6 +139,7 @@
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTitle
             // 

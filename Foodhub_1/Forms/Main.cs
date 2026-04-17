@@ -21,5 +21,55 @@ namespace Foodhub_1
         {
 
         }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFoodItems_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngredients_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDispatchOrders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRiders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDependents_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMotorBikes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBikeAssignments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

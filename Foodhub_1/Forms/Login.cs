@@ -21,5 +21,19 @@ namespace Foodhub_1
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
+            {
+                FrmMain frm = new FrmMain();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.");
+            }
+        }
     }
 }
