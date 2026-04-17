@@ -53,6 +53,7 @@
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -62,6 +63,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -71,6 +73,7 @@
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -80,7 +83,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.button4_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cmbCategory
             // 
@@ -121,6 +124,7 @@
             this.dgvFoodItems.Name = "dgvFoodItems";
             this.dgvFoodItems.Size = new System.Drawing.Size(547, 150);
             this.dgvFoodItems.TabIndex = 8;
+            this.dgvFoodItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodItems_CellContentClick);
             // 
             // lblFoodItem
             // 
