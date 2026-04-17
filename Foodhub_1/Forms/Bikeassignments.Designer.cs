@@ -175,6 +175,7 @@
             this.dgvAssignments.Name = "dgvAssignments";
             this.dgvAssignments.Size = new System.Drawing.Size(432, 172);
             this.dgvAssignments.TabIndex = 14;
+            this.dgvAssignments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignments_CellContentClick);
             // 
             // btnSave
             // 
