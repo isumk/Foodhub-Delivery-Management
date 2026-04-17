@@ -24,48 +24,49 @@ namespace Foodhub_1
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-
+            new FrmCustomers().ShowDialog();
         }
 
         private void btnFoodItems_Click(object sender, EventArgs e)
         {
-
+            new FrmFoodItems().ShowDialog();
         }
 
         private void btnIngredients_Click(object sender, EventArgs e)
         {
-
+            new FrmIngredients().ShowDialog();
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-
+            new FrmOrders().ShowDialog();
         }
 
         private void btnDispatchOrders_Click(object sender, EventArgs e)
         {
-
+            new FrmDispatch().ShowDialog();
         }
 
         private void btnRiders_Click(object sender, EventArgs e)
         {
-
+            new FrmRiders().ShowDialog();
         }
 
         private void btnDependents_Click(object sender, EventArgs e)
         {
-
+            new FrmDependents().ShowDialog();
         }
 
         private void btnMotorBikes_Click(object sender, EventArgs e)
         {
-
+            new FrmMotorBikes().ShowDialog();
         }
 
         private void btnBikeAssignments_Click(object sender, EventArgs e)
         {
-
+           new FrmBikeassignments().ShowDialog();
         }
+        
 
         private void btnExit_Click(object sender, EventArgs e)
         {
