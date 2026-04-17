@@ -16,5 +16,15 @@ namespace Foodhub_1
         {
             InitializeComponent();
         }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

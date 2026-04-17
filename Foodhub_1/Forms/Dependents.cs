@@ -16,5 +16,10 @@ namespace Foodhub_1
         {
             InitializeComponent();
         }
+
+        private void FrmDependents_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
