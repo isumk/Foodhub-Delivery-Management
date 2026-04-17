@@ -92,10 +92,8 @@ Main tables included:
 
 ## How to Run the Project
 1. Open SQL Server Management Studio.
-2. Run the scripts in the `DatabaseScripts` folder in this order:
-   - `01_Create_Database.sql`
-   - `02_Sample_Data.sql`
-   - `03_Views_Triggers_Security.sql`
+2. Run the script called  "Database sctipt""
+  
 3. Open the solution file in Visual Studio 2022.
 4. Check the connection string in `App.config`.
 5. Build and run the project.
@@ -104,4 +102,4 @@ Main tables included:
 The project documents are available in the `Documentation` folder.
 
 ## Author
-[Your Name]
+isumjith
