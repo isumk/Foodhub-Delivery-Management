@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.grpDispatch = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.lblOrderNo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbOrdersPending = new System.Windows.Forms.ComboBox();
-            this.dtpDispatchDateTime = new System.Windows.Forms.DateTimePicker();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.txtCurrentStatus = new System.Windows.Forms.TextBox();
             this.btnDispatch = new System.Windows.Forms.Button();
+            this.txtCurrentStatus = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.dtpDispatchDateTime = new System.Windows.Forms.DateTimePicker();
+            this.cmbOrdersPending = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblOrderNo = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgvDispatchHistory = new System.Windows.Forms.DataGridView();
             this.grpDispatch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispatchHistory)).BeginInit();
@@ -63,33 +63,46 @@
             this.grpDispatch.Text = "Dispatch Order";
             this.grpDispatch.Enter += new System.EventHandler(this.grpDispatch_Enter);
             // 
-            // lblOrderNo
+            // btnDispatch
             // 
-            this.lblOrderNo.AutoSize = true;
-            this.lblOrderNo.Location = new System.Drawing.Point(21, 44);
-            this.lblOrderNo.Name = "lblOrderNo";
-            this.lblOrderNo.Size = new System.Drawing.Size(50, 13);
-            this.lblOrderNo.TabIndex = 0;
-            this.lblOrderNo.Text = "Order No";
-            this.lblOrderNo.Click += new System.EventHandler(this.label1_Click);
+            this.btnDispatch.Location = new System.Drawing.Point(151, 209);
+            this.btnDispatch.Name = "btnDispatch";
+            this.btnDispatch.Size = new System.Drawing.Size(75, 23);
+            this.btnDispatch.TabIndex = 8;
+            this.btnDispatch.Text = "Dispatch";
+            this.btnDispatch.UseVisualStyleBackColor = true;
+            this.btnDispatch.Click += new System.EventHandler(this.btnDispatch_Click);
             // 
-            // label2
+            // txtCurrentStatus
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Dispatch DateTime";
+            this.txtCurrentStatus.Location = new System.Drawing.Point(88, 159);
+            this.txtCurrentStatus.Name = "txtCurrentStatus";
+            this.txtCurrentStatus.ReadOnly = true;
+            this.txtCurrentStatus.Size = new System.Drawing.Size(200, 20);
+            this.txtCurrentStatus.TabIndex = 7;
             // 
-            // label3
+            // txtCustomerName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Customer Name";
+            this.txtCustomerName.Location = new System.Drawing.Point(88, 120);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.ReadOnly = true;
+            this.txtCustomerName.Size = new System.Drawing.Size(200, 20);
+            this.txtCustomerName.TabIndex = 6;
+            // 
+            // dtpDispatchDateTime
+            // 
+            this.dtpDispatchDateTime.Location = new System.Drawing.Point(88, 82);
+            this.dtpDispatchDateTime.Name = "dtpDispatchDateTime";
+            this.dtpDispatchDateTime.Size = new System.Drawing.Size(200, 20);
+            this.dtpDispatchDateTime.TabIndex = 5;
+            // 
+            // cmbOrdersPending
+            // 
+            this.cmbOrdersPending.FormattingEnabled = true;
+            this.cmbOrdersPending.Location = new System.Drawing.Point(88, 41);
+            this.cmbOrdersPending.Name = "cmbOrdersPending";
+            this.cmbOrdersPending.Size = new System.Drawing.Size(200, 21);
+            this.cmbOrdersPending.TabIndex = 4;
             // 
             // label4
             // 
@@ -100,45 +113,33 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Curren tStatus";
             // 
-            // cmbOrdersPending
+            // label3
             // 
-            this.cmbOrdersPending.FormattingEnabled = true;
-            this.cmbOrdersPending.Location = new System.Drawing.Point(88, 41);
-            this.cmbOrdersPending.Name = "cmbOrdersPending";
-            this.cmbOrdersPending.Size = new System.Drawing.Size(200, 21);
-            this.cmbOrdersPending.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Customer Name";
             // 
-            // dtpDispatchDateTime
+            // label2
             // 
-            this.dtpDispatchDateTime.Location = new System.Drawing.Point(88, 82);
-            this.dtpDispatchDateTime.Name = "dtpDispatchDateTime";
-            this.dtpDispatchDateTime.Size = new System.Drawing.Size(200, 20);
-            this.dtpDispatchDateTime.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Dispatch DateTime";
             // 
-            // txtCustomerName
+            // lblOrderNo
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(88, 120);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.Size = new System.Drawing.Size(200, 20);
-            this.txtCustomerName.TabIndex = 6;
-            // 
-            // txtCurrentStatus
-            // 
-            this.txtCurrentStatus.Location = new System.Drawing.Point(88, 159);
-            this.txtCurrentStatus.Name = "txtCurrentStatus";
-            this.txtCurrentStatus.ReadOnly = true;
-            this.txtCurrentStatus.Size = new System.Drawing.Size(200, 20);
-            this.txtCurrentStatus.TabIndex = 7;
-            // 
-            // btnDispatch
-            // 
-            this.btnDispatch.Location = new System.Drawing.Point(151, 209);
-            this.btnDispatch.Name = "btnDispatch";
-            this.btnDispatch.Size = new System.Drawing.Size(75, 23);
-            this.btnDispatch.TabIndex = 8;
-            this.btnDispatch.Text = "Dispatch";
-            this.btnDispatch.UseVisualStyleBackColor = true;
+            this.lblOrderNo.AutoSize = true;
+            this.lblOrderNo.Location = new System.Drawing.Point(21, 44);
+            this.lblOrderNo.Name = "lblOrderNo";
+            this.lblOrderNo.Size = new System.Drawing.Size(50, 13);
+            this.lblOrderNo.TabIndex = 0;
+            this.lblOrderNo.Text = "Order No";
+            this.lblOrderNo.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvDispatchHistory
             // 
@@ -147,6 +148,7 @@
             this.dgvDispatchHistory.Name = "dgvDispatchHistory";
             this.dgvDispatchHistory.Size = new System.Drawing.Size(448, 136);
             this.dgvDispatchHistory.TabIndex = 1;
+            this.dgvDispatchHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDispatchHistory_CellContentClick);
             // 
             // FrmDispatch
             // 
@@ -157,6 +159,7 @@
             this.Controls.Add(this.grpDispatch);
             this.Name = "FrmDispatch";
             this.Text = "Dispatch";
+            this.Load += new System.EventHandler(this.FrmDispatch_Load);
             this.grpDispatch.ResumeLayout(false);
             this.grpDispatch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispatchHistory)).EndInit();
