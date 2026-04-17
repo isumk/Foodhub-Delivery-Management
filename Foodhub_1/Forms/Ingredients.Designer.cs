@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblIngredient = new System.Windows.Forms.Label();
             this.txtIngredientID = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIngredientName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -67,6 +68,7 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -76,6 +78,7 @@
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -85,6 +88,7 @@
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvIngredients
             // 
@@ -93,6 +97,7 @@
             this.dgvIngredients.Name = "dgvIngredients";
             this.dgvIngredients.Size = new System.Drawing.Size(564, 122);
             this.dgvIngredients.TabIndex = 15;
+            this.dgvIngredients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredients_CellContentClick);
             // 
             // label2
             // 
@@ -121,19 +126,19 @@
             this.txtIngredientID.TabIndex = 18;
             this.txtIngredientID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtIngredientName
             // 
-            this.textBox2.Location = new System.Drawing.Point(157, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 20);
-            this.textBox2.TabIndex = 19;
+            this.txtIngredientName.Location = new System.Drawing.Point(157, 101);
+            this.txtIngredientName.Name = "txtIngredientName";
+            this.txtIngredientName.Size = new System.Drawing.Size(212, 20);
+            this.txtIngredientName.TabIndex = 19;
             // 
             // FrmIngredients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 374);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtIngredientName);
             this.Controls.Add(this.txtIngredientID);
             this.Controls.Add(this.lblIngredient);
             this.Controls.Add(this.label2);
@@ -145,6 +150,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmIngredients";
             this.Text = "Ingredients  ";
+            this.Load += new System.EventHandler(this.FrmIngredients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,6 +168,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblIngredient;
         private System.Windows.Forms.TextBox txtIngredientID;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIngredientName;
     }
 }
