@@ -67,11 +67,7 @@ namespace Foodhub_1
 
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            if (orderItemsTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Please add at least one food item.");
-                return;
-            }
+            if (!ValidateOrder()) return;
 
             using (SqlConnection con = DatabaseHelper.GetConnection())
             {
@@ -80,46 +76,57 @@ namespace Foodhub_1
 
                 try
                 {
-                    string insertOrder = @"INSERT INTO Orders
-                                          (CustomerID, OrderDate, OrderTime, OrderStatus, PaymentMethod, OrderAmount)
-                                          OUTPUT INSERTED.OrderNo
-                                          VALUES
-                                          (@CustomerID, @OrderDate, @OrderTime, @OrderStatus, @PaymentMethod, @OrderAmount)";
+                    int customerId;
+                    if (!int.TryParse(cmbCustomer.SelectedValue?.ToString(), out customerId))
+                    {
+                        MessageBox.Show("Customer selection is invalid.");
+                        return;
+                    }
 
-                    SqlCommand cmdOrder = new SqlCommand(insertOrder, con, trans);
-                    cmdOrder.Parameters.AddWithValue("@CustomerID", cmbCustomer.SelectedValue);
-                    cmdOrder.Parameters.AddWithValue("@OrderDate", dtpOrderDate.Value.Date);
-                    cmdOrder.Parameters.AddWithValue("@OrderTime", dtpOrderTime.Value.TimeOfDay);
-                    cmdOrder.Parameters.AddWithValue("@OrderStatus", cmbOrderStatus.Text);
-                    cmdOrder.Parameters.AddWithValue("@PaymentMethod", cmbPaymentMethod.Text);
-                    cmdOrder.Parameters.AddWithValue("@OrderAmount", decimal.Parse(lblTotalAmount.Text));
+                    int orderNo;
 
-                    int orderNo = (int)cmdOrder.ExecuteScalar();
+                    using (SqlCommand cmdOrder = new SqlCommand(@"
+                INSERT INTO Orders
+                (CustomerID, OrderDate, OrderTime, OrderStatus, PaymentMethod, OrderAmount)
+                OUTPUT INSERTED.OrderNo
+                VALUES
+                (@CustomerID, @OrderDate, @OrderTime, @OrderStatus, @PaymentMethod, @OrderAmount)", con, trans))
+                    {
+                        cmdOrder.Parameters.AddWithValue("@CustomerID", customerId);
+                        cmdOrder.Parameters.AddWithValue("@OrderDate", dtpOrderDate.Value.Date);
+                        cmdOrder.Parameters.Add("@OrderTime", SqlDbType.Time).Value = dtpOrderTime.Value.TimeOfDay;
+                        cmdOrder.Parameters.AddWithValue("@OrderStatus", cmbOrderStatus.Text.Trim());
+                        cmdOrder.Parameters.AddWithValue("@PaymentMethod", cmbPaymentMethod.Text.Trim());
+                        cmdOrder.Parameters.AddWithValue("@OrderAmount", Convert.ToDecimal(lblTotalAmount.Text));
+
+                        orderNo = Convert.ToInt32(cmdOrder.ExecuteScalar());
+                    }
 
                     foreach (DataRow row in orderItemsTable.Rows)
                     {
-                        string insertItem = @"INSERT INTO OrderItem
-                                             (OrderNo, ItemNumber, Quantity, UnitPriceAtOrderTime)
-                                             VALUES
-                                             (@OrderNo, @ItemNumber, @Quantity, @UnitPriceAtOrderTime)";
+                        using (SqlCommand cmdItem = new SqlCommand(@"
+                    INSERT INTO OrderItem
+                    (OrderNo, ItemNumber, Quantity, UnitPriceAtOrderTime)
+                    VALUES
+                    (@OrderNo, @ItemNumber, @Quantity, @UnitPriceAtOrderTime)", con, trans))
+                        {
+                            cmdItem.Parameters.AddWithValue("@OrderNo", orderNo);
+                            cmdItem.Parameters.AddWithValue("@ItemNumber", Convert.ToInt32(row["ItemNumber"]));
+                            cmdItem.Parameters.AddWithValue("@Quantity", Convert.ToInt32(row["Quantity"]));
+                            cmdItem.Parameters.AddWithValue("@UnitPriceAtOrderTime", Convert.ToDecimal(row["UnitPriceAtOrderTime"]));
 
-                        SqlCommand cmdItem = new SqlCommand(insertItem, con, trans);
-                        cmdItem.Parameters.AddWithValue("@OrderNo", orderNo);
-                        cmdItem.Parameters.AddWithValue("@ItemNumber", row["ItemNumber"]);
-                        cmdItem.Parameters.AddWithValue("@Quantity", row["Quantity"]);
-                        cmdItem.Parameters.AddWithValue("@UnitPriceAtOrderTime", row["UnitPriceAtOrderTime"]);
-                        cmdItem.ExecuteNonQuery();
+                            cmdItem.ExecuteNonQuery();
+                        }
                     }
 
                     trans.Commit();
-                    MessageBox.Show("Order saved successfully.");
-                    orderItemsTable.Rows.Clear();
-                    UpdateTotal();
+                    MessageBox.Show("Order saved successfully. Order No: " + orderNo);
+                   
                 }
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.ToString());
                 }
             }
         }
@@ -151,10 +158,17 @@ namespace Foodhub_1
         }
         private void LoadCustomers()
         {
-            DataTable dt = DatabaseHelper.GetDataTable("SELECT CustomerID, CustomerName FROM Customer");
-            cmbCustomer.DataSource = dt;
+            DataTable dt = DatabaseHelper.GetDataTable(
+                "SELECT CustomerID, CustomerName FROM Customer ORDER BY CustomerName");
+
+            cmbCustomer.DataSource = null;
+            cmbCustomer.Items.Clear();
+
             cmbCustomer.DisplayMember = "CustomerName";
             cmbCustomer.ValueMember = "CustomerID";
+            cmbCustomer.DataSource = dt;
+            cmbCustomer.SelectedIndex = -1;
+            cmbCustomer.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void LoadFoodItems()
@@ -171,6 +185,41 @@ namespace Foodhub_1
             {
                 txtUnitPrice.Text = row["Price"].ToString();
             }
+        }
+        private bool ValidateOrder()
+        {
+            if (cmbCustomer.SelectedIndex == -1 || cmbCustomer.SelectedValue == null)
+            {
+                MessageBox.Show("Please select a valid customer.");
+                return false;
+            }
+
+            int tempCustomerId;
+            if (!int.TryParse(cmbCustomer.SelectedValue.ToString(), out tempCustomerId))
+            {
+                MessageBox.Show("Customer selection is invalid.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbPaymentMethod.Text))
+            {
+                MessageBox.Show("Please select a payment method.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbOrderStatus.Text))
+            {
+                MessageBox.Show("Please select an order status.");
+                return false;
+            }
+
+            if (orderItemsTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Please add at least one food item.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

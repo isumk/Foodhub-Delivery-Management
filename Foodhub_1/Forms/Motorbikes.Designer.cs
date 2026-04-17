@@ -121,9 +121,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(87, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.label5.Text = "Registration date";
             // 
             // label4
             // 

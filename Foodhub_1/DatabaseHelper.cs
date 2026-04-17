@@ -12,7 +12,7 @@ namespace Foodhub_1
     public static class DatabaseHelper
     {
         private static readonly string connStr =
-            ConfigurationManager.ConnectionStrings["FoodHubDB1"].ConnectionString;
+            ConfigurationManager.ConnectionStrings["FoodHubDB"].ConnectionString;
 
         public static SqlConnection GetConnection()
         {

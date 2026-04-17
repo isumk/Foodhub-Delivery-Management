@@ -47,10 +47,16 @@ namespace Foodhub_1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtIngredientID.Text, out int ingredientID))
+            {
+                MessageBox.Show("Please select an ingredient to update.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string query = "UPDATE Ingredient SET IngredientName=@IngredientName WHERE IngredientID=@IngredientID";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@IngredientID", int.Parse(txtIngredientID.Text)),
+                new SqlParameter("@IngredientID", ingredientID),
                 new SqlParameter("@IngredientName", txtIngredientName.Text.Trim())
             };
 
@@ -61,10 +67,16 @@ namespace Foodhub_1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM Ingredient WHERE IngredientID=@IngredientID";
-            SqlParameter[] parameters =
+            if (!int.TryParse(txtIngredientID.Text, out int ingredientID))
             {
-                new SqlParameter("@IngredientID", int.Parse(txtIngredientID.Text))
+                MessageBox.Show("Please select an ingredient to delete.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var query = "DELETE FROM Ingredient WHERE IngredientID=@IngredientID";
+            var parameters = new SqlParameter[]
+            {
+                new SqlParameter("@IngredientID", SqlDbType.Int) { Value = ingredientID }
             };
 
             DatabaseHelper.ExecuteNonQuery(query, parameters);

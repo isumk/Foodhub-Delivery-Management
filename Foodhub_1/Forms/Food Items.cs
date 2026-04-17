@@ -58,16 +58,28 @@ namespace Foodhub_1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtItemNumber.Text, out int itemNumber))
+            {
+                MessageBox.Show("Please select a valid food item from the list.");
+                return;
+            }
+            
+            if (!decimal.TryParse(txtPrice.Text, out decimal price))
+            {
+                MessageBox.Show("Price must be a valid number.");
+                return;
+            }
+
             string query = @"UPDATE FoodItem
                              SET ItemName=@ItemName, ItemCategory=@ItemCategory, Price=@Price
                              WHERE ItemNumber=@ItemNumber";
 
             SqlParameter[] parameters =
             {
-                new SqlParameter("@ItemNumber", int.Parse(txtItemNumber.Text)),
+                new SqlParameter("@ItemNumber", itemNumber),
                 new SqlParameter("@ItemName", txtItemName.Text.Trim()),
                 new SqlParameter("@ItemCategory", cmbCategory.Text),
-                new SqlParameter("@Price", decimal.Parse(txtPrice.Text))
+                new SqlParameter("@Price", price)
             };
 
             DatabaseHelper.ExecuteNonQuery(query, parameters);
@@ -82,10 +94,16 @@ namespace Foodhub_1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM FoodItem WHERE ItemNumber=@ItemNumber";
+            if (!int.TryParse(txtItemNumber.Text, out int itemNumber))
+            {
+                MessageBox.Show("Please select a valid food item from the list.");
+                return;
+            }
+
+                string query = "DELETE FROM FoodItem WHERE ItemNumber=@ItemNumber";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@ItemNumber", int.Parse(txtItemNumber.Text))
+                new SqlParameter("@ItemNumber", itemNumber)
             };
 
             DatabaseHelper.ExecuteNonQuery(query, parameters);
